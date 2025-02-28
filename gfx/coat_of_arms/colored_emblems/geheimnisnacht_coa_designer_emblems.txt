@@ -1,0 +1,21 @@
+﻿###
+# CK3 Gehem old stuff
+ce_mount.dds = { colors = 1 category = nature }
+
+##Khorne
+skald_khorne_symbol_1.dds = { colors = 1 category = faiths }
+skald_khorne_symbol_2.dds = { colors = 1 category = faiths }
+skald_khorne_axe_blood.dds = { colors = 3 category = manmade }
+
+##Slaanesh
+skald_slaanesh_star.dds = { colors = 2 category = faiths }
+skald_slaanesh_pleasure_pain.dds = { colors = 3 category = faiths }
+skald_slaanesh_bat.dds = { colors = 2 category = animals }
+skald_slaanesh_taijitu.dds = { colors = 2 category = abstract }
+
+##Tzeentch
+skald_tzeentch_symbol_1.dds = { colors = 2 category = faiths }
+skald_tzeentch_symbol_flaming.dds = { colors = 2 category = faiths }
+skald_tzeentch_hollow_symbol.dds = { colors = 1 category = faiths }
+skald_tzeentch_hollow_symbol_flaming.dds = { colors = 1 category = faiths }
+skald_tzeentch_symbol_lidded_eye.dds = { colors = 3 category = faiths }

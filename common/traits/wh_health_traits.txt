@@ -1,0 +1,109 @@
+﻿nurglepox = {
+	diplomacy = -5
+	stewardship = -3
+	learning = -8
+	prowess = -10
+	health = -7
+	elderly_health = -1.5
+	fertility = -0.25
+
+	category = health
+	
+	dread_baseline_add = -15
+	dread_loss_mult = 1
+
+	attraction_opinion = -10
+	
+	ruler_designer_cost = 0
+
+	flag = illness
+	flag = debilitating_illness
+	flag = blocks_getting_non_epidemic_disease
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_nurglepox_desc
+			}
+			desc = trait_nurglepox_character_desc
+		}
+	}
+
+	ai_energy = -75
+}
+
+tombrot = {
+	diplomacy = -6
+	stewardship = -2
+	learning = -8
+	prowess = -15
+	health = -4
+	elderly_health = -1.5
+	fertility = -0.25
+
+	category = health
+	
+	dread_baseline_add = -15
+	dread_loss_mult = 1
+
+	attraction_opinion = -10
+	
+	ruler_designer_cost = 0
+
+	flag = illness
+	flag = debilitating_illness
+	flag = blocks_getting_non_epidemic_disease
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_tombrot_desc
+			}
+			desc = trait_tombrot_character_desc
+		}
+	}
+
+	ai_energy = -75
+}
+
+eyerot = {
+	stewardship = -2
+	learning = -3
+	prowess = -15
+	health = -1
+	elderly_health = -1
+	fertility = -0.25
+
+	category = health
+	
+	dread_baseline_add = -15
+	dread_loss_mult = 1
+
+	attraction_opinion = -10
+	
+	ruler_designer_cost = 0
+
+	flag = illness
+	flag = debilitating_illness
+	flag = blocks_getting_non_epidemic_disease
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_eyerot_desc
+			}
+			desc = trait_eyerot_character_desc
+		}
+	}
+
+	ai_energy = -75
+}

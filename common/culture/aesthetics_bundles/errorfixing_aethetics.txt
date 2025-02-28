@@ -1,0 +1,19 @@
+﻿errorfixing_aesthetics = {
+	
+	name_list = name_list_fallback
+	is_shown = {
+		always = no
+	}
+	coa_gfx = {
+		sami_coa_gfx
+	}
+	clothing_gfx = {
+		indian_clothing_gfx
+	}
+	building_gfx = {
+		western_building_gfx
+	}
+	unit_gfx = {
+		northern_unit_gfx
+	}
+}
