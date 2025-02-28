@@ -1,0 +1,12 @@
+﻿l_english:
+ trait_nurglepox:0 "Nurgle's pox"
+ trait_nurglepox_desc:0 "Riddled by scars, rashes, and bumps, this character will never be the same again even if they survive their malady."
+ trait_nurglepox_character_desc:0 "Riddled by scars, rashes, and bumps, [ROOT.GetCharacter.GetFirstNameNoTooltip] will never be the same again even if [ROOT.GetCharacter.GetSheHe] survives [ROOT.GetCharacter.GetHerHis] malady."
+ 
+ trait_tombrot:0 "Tomb Rot"
+ trait_tombrot_desc:0 "Stiffen joints make this character hard to move. Character's skin will be marked by the disease if the character survives."
+ trait_tombrot_character_desc:0 "Stiffen joints make [ROOT.GetCharacter.GetFirstNameNoTooltip] hard to move. [ROOT.GetCharacter.GetHerHis] skin will be marked by the disease if [ROOT.GetCharacter.GetSheHe] survives."
+
+ trait_eyerot:0 "Eye Rot"
+ trait_eyerot_desc:0 "Never ending headache makes thinking hard for this character."
+ trait_eyerot_character_desc:0 "Never ending headache makes thinking hard for [ROOT.GetCharacter.GetFirstNameNoTooltip]."

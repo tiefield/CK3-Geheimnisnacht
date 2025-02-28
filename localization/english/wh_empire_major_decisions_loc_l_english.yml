@@ -1,0 +1,11 @@
+﻿l_english:
+ call_for_electoral_college:0 "Call for Electoral College"
+ call_for_electoral_college_tooltip:0 "Attempt to gather the Elector Counts to elect an Emperor"
+ call_for_electoral_college_desc:0 "Attempt to gather the Elector Counts to elect an Emperor"
+ call_for_electoral_college_confirm:0 "Send the invitations"
+ not_implemented_yet:0 "@warning_icon! Not implemented yet"
+ renounce_imperial_throne:0 "Renounce claim on the Empire"
+ renounce_imperial_throne_tooltip:0 "Give up your claim on the Empire"
+ renounce_imperial_throne_desc:0 "Give up your claim on the Empire"
+ renounce_imperial_throne_confirm:0 "Give up"
+

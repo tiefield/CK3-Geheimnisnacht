@@ -1,0 +1,12 @@
+﻿l_english:
+ 
+ wh_bretonnia_decision_events.0001.t:0 "Quest for Grail."
+ wh_bretonnia_decision_events.0001.desc:0 "You have chosen to embark on the most noble quest attainable to a knight – the pursuit of the Lady's Grail. Strive for the highest honor within the nation, becoming a paragon of knighthood, a legendary figure, the knight of the Grail."
+ wh_bretonnia_decision_events.0001.a:0 "Seek the Grail!"
+ wh_bretonnia_decision_events.0001.b:0 "Seek the Grail!"
+ wh_bretonnia_decision_events.0001.a.crit_success:0 "You succeed, for the Lady!"
+ wh_bretonnia_decision_events.0001.a.success:0 "You succeed, for the Lady!"
+ wh_bretonnia_decision_events.0001.a.failure:0 "You failed,the Lady is dissapointed."
+ wh_bretonnia_decision_events.0001.b.success:0 "You are now knight errant."
+ wh_bretonnia_decision_events.0001.b.failure:0 "You failed,the Lady is dissapointed."
+
