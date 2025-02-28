@@ -1,0 +1,17 @@
+﻿e_reikland = {
+	6480.2.6 = {
+		holder = 88047
+		#law = succ_primogeniture
+		#law = cognatic_succession
+		#law = centralization_2
+	}
+	6504.5.17 = {
+		holder = 88000
+	}
+	6779.8.25 = {
+		holder = 88069
+	}
+	6804.12.5 = {
+		holder = 0
+	}
+}

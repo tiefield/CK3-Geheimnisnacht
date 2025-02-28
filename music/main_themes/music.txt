@@ -1,0 +1,11 @@
+﻿##### MAINTHEME
+
+main_theme_track = {
+	music = "file:/sound/WH_music/WHG_maintitle.ogg"
+	can_be_interrupted = no
+}
+
+main_theme_track_roco  = {
+	music = "file:/sound/WH_music/WHG_maintitle.ogg"
+	can_be_interrupted = no
+}

@@ -1,0 +1,11 @@
+﻿e_westerland = {
+	6480.2.6 = {
+		holder = 51000
+		#law = succ_primogeniture
+		#law = true_cognatic_succession
+		#law = centralization_2
+	}
+	6802.7.23 = {
+		holder = 0
+	}
+}
