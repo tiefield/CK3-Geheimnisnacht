@@ -7,7 +7,6 @@
 	holding = castle_holding
 	6000.1.1 = { 
 		special_building = archecclesiatium_of_myrmidia_01
-		duchy_capital_building = city_magritta_01
 		buildings = {
 			curtain_walls_02
 			common_tradeport_02
@@ -26,7 +25,7 @@
 2302 = { #san_sebastiano
 	holding = castle_holding
 	6000.1.1 = {
-		special_building_slot = generic_university
+		special_building = generic_university
 		buildings = {
 			curtain_walls_01
 		}

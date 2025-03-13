@@ -5,6 +5,9 @@
 	culture = sartosan_tilean
 	religion = stromfels
 	holding = castle_holding
+	6000.1.1 = {
+		special_building = castilla_diablos_01
+	}
 }
 2115 = { #sartosa
 	holding = city_holding

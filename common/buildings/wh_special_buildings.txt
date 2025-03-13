@@ -34,7 +34,7 @@
 	}
 	
 	province_modifier = {
-		monthly_income = 1
+		monthly_income = 3
 	}
 	
 	ai_value = {
@@ -98,6 +98,64 @@ great_temple_of_myrmidia_01 = { #Holy Cathedral of Remas
 	type = special
 
 }
+
+chapel_of_bastonne_01 = {
+
+	asset = {
+		type = pdxmesh
+		name = "building_special_cathedral_generic_mesh"
+	}
+
+	construction_time = very_slow_construction_time
+
+	type_icon = "icon_structure_cologne_cathedral.dds"
+	
+	can_construct_potential = {
+		building_requirement_tribal = no
+	}
+	
+	is_enabled = {
+		custom_description = {
+			text = holy_site_building_trigger
+			barony = {
+				is_holy_site_of = scope:holder.faith
+			}
+		}
+	}
+	
+	cost_gold = 1000
+
+	character_modifier = {
+		monthly_piety_gain_per_knight_add = 0.05
+		monthly_piety = 0.1
+		holy_order_hire_cost_mult = -0.20
+		legitimacy_gain_mult = 0.1
+		martial_per_piety_level = 1
+		learning_per_piety_level = 1
+	}
+	
+	county_modifier = {
+		development_growth_factor = 0.1
+		development_growth = 0.1
+	}
+	
+	province_modifier = {
+		monthly_income = 2
+	}
+	
+	ai_value = {
+		base = 100
+		modifier = { # Fill all building slots before going for special buildings
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+	
+	type = special
+
+	flag = travel_point_of_interest_religious
+}
+
 
 generic_university = {
 	construction_time = very_slow_construction_time
@@ -1431,20 +1489,19 @@ vineyards_of_bordeleaux_01 = {
 	cost_gold = 300
 	
 	character_modifier = {
-		monthly_prestige_gain_mult = 0.10
+		monthly_prestige = 0.1
 	}
 	
 	county_modifier = {
 		county_opinion_add = 20
 		development_growth_factor = 0.1
+		development_growth = 0.10
 	}
 	
 	province_modifier = { 
 		monthly_income = 3
-	}
-	
-	duchy_capital_county_modifier = {
-		tax_mult = 0.10
+		fort_level = 2
+		defender_holding_advantage = 5
 	}
 	
 	ai_value = {
@@ -1464,12 +1521,6 @@ vineyards_of_bordeleaux_01 = {
 couronne_tournament_grounds_01 = {
 
 	construction_time = very_slow_construction_time
-	effect_desc = {
-		triggered_desc = {
-			trigger = { has_dlc_feature = tours_and_tournaments }
-			desc = tournament_activity_cost_max_discount_effect_desc
-		}
-	}
 	
 	type_icon = "icon_building_jousting_lists.dds" 
 	
@@ -1479,21 +1530,19 @@ couronne_tournament_grounds_01 = {
 	cost_gold = 500
 	
 	character_modifier = {
+		men_at_arms_recruitment_cost = -0.1
 		monthly_prestige_gain_mult = 0.10
+		knight_limit = 2
+		knight_effectiveness_mult = 0.20
 	}
 	
 	county_modifier = {
-		tax_mult = 0.1
 		development_growth_factor = 0.1
 		county_opinion_add = 10
 	}
 	
 	province_modifier = { 
 		monthly_income = 1
-		stationed_heavy_cavalry_damage_mult = very_high_maa_damage_tier_2
-		stationed_heavy_cavalry_toughness_mult = very_high_maa_toughness_tier_2
-		stationed_heavy_cavalry_screen_mult = very_high_maa_screen_tier_2
-		stationed_heavy_cavalry_pursuit_mult = very_high_maa_pursuit_tier_2
 	}
 	
 	ai_value = {
@@ -1527,8 +1576,8 @@ tower_of_tor_alessi_01 = {
 	}
 	
 	county_modifier = {
-		tax_mult = 0.15
-		development_growth_factor = 0.15
+		development_growth_factor = 0.1
+		development_growth = 0.10
 	}
 	
 	province_modifier = { 
@@ -1574,27 +1623,21 @@ castle_montfort_01 = {
 	max_garrison = good_building_max_garrison_tier_1
 	
 	province_modifier = {
-		monthly_income = 0.5
 		fort_level = 4
-		defender_holding_advantage = 5
-		stationed_heavy_cavalry_damage_mult = normal_maa_damage_tier_1
-		stationed_heavy_cavalry_toughness_mult = normal_maa_toughness_tier_1
-		stationed_heavy_cavalry_pursuit_mult = normal_maa_pursuit_tier_1
+		defender_holding_advantage = 15
+		monthly_income = 1
 	}
 	
 	county_modifier = {
-		monthly_county_control_change_add = 0.1
-		tax_mult = 0.1
-		levy_size = 0.1
 		development_growth_factor = 0.1
 	}
 
 	
-	next_building = castle_montfort_02
+	#next_building = castle_montfort_02
 
 	type_icon = "icon_structure_theodosian_walls.dds"
 	
-	type = duchy_capital
+	type = special
 	
 	flag = travel_point_of_interest_martial
 	
@@ -1607,122 +1650,124 @@ castle_montfort_01 = {
 		}
 	}
 }
-
-castle_montfort_02 = {
-	construction_time = slow_construction_time
-
-	can_construct_potential = {
-		building_requirement_castle_city_church = { LEVEL = 01 }
-		building_requirement_tribal = no
-		barony = title:b_montfort
-	}
-	
-	can_construct_showing_failures_only = {
-		
-		culture = {
-			has_innovation = innovation_castle_baileys
-		}
-	}
-	
-	is_enabled = {
-		county.holder = { has_title = prev.duchy }
-		county.holder = { has_cultural_pillar = heritage_bretonnian }
-	}
-	show_disabled = yes
-	
-	cost_gold = expensive_building_tier_4_cost
-	
-	max_garrison = good_building_max_garrison_tier_2
-	
-	province_modifier = {
-		monthly_income = 1
-		fort_level = 8
-		defender_holding_advantage = 10
-		stationed_heavy_cavalry_damage_mult = normal_maa_damage_tier_2
-		stationed_heavy_cavalry_toughness_mult = normal_maa_toughness_tier_2
-		stationed_heavy_cavalry_pursuit_mult = normal_maa_pursuit_tier_2
-	}
-	
-	county_modifier = {
-		monthly_county_control_change_add = 0.2
-		tax_mult = 0.2
-		levy_size = 0.2
-		development_growth_factor = 0.2
-	}
-	
-	next_building = castle_montfort_03
-	
-	type = duchy_capital
-	
-	flag = travel_point_of_interest_martial
-	
-	ai_value = {
-		base = 100
-		culture_likely_to_fortify_modifier = yes
-		modifier = { # Fill all building slots before going for special buildings
-			factor = 0
-			free_building_slots > 0
-		}
-	}
-}
-
-castle_montfort_03 = {
-	construction_time = slow_construction_time
-
-	can_construct_potential = {
-		building_requirement_castle_city_church = { LEVEL = 01 }
-		building_requirement_tribal = no
-		barony = title:b_montfort
-	}
-	
-	can_construct_showing_failures_only = {
-		
-		culture = {
-			has_innovation = innovation_royal_armory
-		}
-	}
-	
-	is_enabled = {
-		county.holder = { has_title = prev.duchy }
-		county.holder = { has_cultural_pillar = heritage_bretonnian }
-	}
-	show_disabled = yes
-	
-	cost_gold = expensive_building_tier_5_cost
-	
-	max_garrison = good_building_max_garrison_tier_4
-	
-	province_modifier = {
-		monthly_income = 2
-		fort_level = 12
-		defender_holding_advantage = 20
-		stationed_heavy_cavalry_damage_mult = normal_maa_damage_tier_3
-		stationed_heavy_cavalry_toughness_mult = normal_maa_toughness_tier_3
-		stationed_heavy_cavalry_pursuit_mult = normal_maa_pursuit_tier_3
-	}
-	
-	county_modifier = {
-		monthly_county_control_change_add = 0.3
-		tax_mult = 0.3
-		levy_size = 0.3
-		development_growth_factor = 0.3
-	}
-	
-	type = duchy_capital
-	
-	flag = travel_point_of_interest_martial
-	
-	flag = fully_upgraded_duchy_capital_building
-	
-	ai_value = {
-		base = 100
-		culture_likely_to_fortify_modifier = yes
-		modifier = { # Fill all building slots before going for special buildings
-			factor = 0
-			free_building_slots > 0
-		}
-	}
-}
+#
+#castle_montfort_02 = {
+	#construction_time = slow_construction_time
+#
+	#can_construct_potential = {
+		#building_requirement_castle_city_church = { LEVEL = 01 }
+		#building_requirement_tribal = no
+		#barony = title:b_montfort
+	#}
+#	
+	#can_construct_showing_failures_only = {
+#		
+		#culture = {
+			#has_innovation = innovation_castle_baileys
+		#}
+	#}
+#	
+	#is_enabled = {
+		#county.holder = { has_title = prev.duchy }
+		#county.holder = { has_cultural_pillar = heritage_bretonnian }
+	#}
+	#show_disabled = yes
+#	
+	#cost_gold = expensive_building_tier_4_cost
+#	
+	#max_garrison = good_building_max_garrison_tier_2
+#	
+	#province_modifier = {
+		#monthly_income = 1
+		#fort_level = 8
+		#defender_holding_advantage = 10
+		#stationed_heavy_cavalry_damage_mult = very_high_maa_damage_tier_2
+		#stationed_heavy_cavalry_toughness_mult = very_high_maa_toughness_tier_2
+		#stationed_heavy_cavalry_pursuit_mult = very_high_maa_pursuit_tier_2
+		#stationed_heavy_cavalry_screen_mult = very_high_maa_screen_tier_2
+	#}
+#	
+	#county_modifier = {
+		#monthly_county_control_change_add = 0.2
+		#tax_mult = 0.2
+		#levy_size = 0.2
+		#development_growth_factor = 0.2
+	#}
+#	
+	#next_building = castle_montfort_03
+#	
+	#type = duchy_capital
+#	
+	#flag = travel_point_of_interest_martial
+#	
+	#ai_value = {
+		#base = 100
+		#culture_likely_to_fortify_modifier = yes
+		#modifier = { # Fill all building slots before going for special buildings
+			#factor = 0
+			#free_building_slots > 0
+		#}
+	#}
+#}
+#
+#castle_montfort_03 = {
+	#construction_time = slow_construction_time
+#
+	#can_construct_potential = {
+		#building_requirement_castle_city_church = { LEVEL = 01 }
+		#building_requirement_tribal = no
+		#barony = title:b_montfort
+	#}
+#	
+	#can_construct_showing_failures_only = {
+#		
+		#culture = {
+			#has_innovation = innovation_royal_armory
+		#}
+	#}
+#	
+	#is_enabled = {
+		#county.holder = { has_title = prev.duchy }
+		#county.holder = { has_cultural_pillar = heritage_bretonnian }
+	#}
+	#show_disabled = yes
+#	
+	#cost_gold = expensive_building_tier_5_cost
+#	
+	#max_garrison = good_building_max_garrison_tier_4
+#	
+	#province_modifier = {
+		#monthly_income = 2
+		#fort_level = 12
+		#defender_holding_advantage = 20
+		#stationed_heavy_cavalry_damage_mult = very_high_maa_damage_tier_3
+		#stationed_heavy_cavalry_toughness_mult = very_high_maa_toughness_tier_3
+		#stationed_heavy_cavalry_pursuit_mult = very_high_maa_pursuit_tier_3
+		#stationed_heavy_cavalry_screen_mult = very_high_maa_screen_tier_3
+	#}
+#	
+	#county_modifier = {
+		#monthly_county_control_change_add = 0.3
+		#tax_mult = 0.3
+		#levy_size = 0.3
+		#development_growth_factor = 0.3
+	#}
+#	
+	#type = duchy_capital
+#	
+	#flag = travel_point_of_interest_martial
+#	
+	#flag = fully_upgraded_duchy_capital_building
+#	
+	#ai_value = {
+		#base = 100
+		#culture_likely_to_fortify_modifier = yes
+		#modifier = { # Fill all building slots before going for special buildings
+			#factor = 0
+			#free_building_slots > 0
+		#}
+	#}
+#}
 
 castle_parravon_01 = {
 	construction_time = slow_construction_time
@@ -1758,17 +1803,11 @@ castle_parravon_01 = {
 		stationed_flying_unit_pursuit_mult = very_high_maa_pursuit_tier_1
 	}
 	
-	county_modifier = {
-		monthly_county_control_change_add = 0.1
-		tax_mult = 0.1
-		levy_size = 0.1
-	}
-	
-	next_building = castle_parravon_02
+	#next_building = castle_parravon_02
 
 	type_icon = "icon_structure_petra.dds"
 	
-	type = duchy_capital
+	type = special
 	
 	flag = travel_point_of_interest_martial
 	
@@ -1782,119 +1821,119 @@ castle_parravon_01 = {
 	}
 }
 
-castle_parravon_02 = {
-	construction_time = slow_construction_time
-
-	can_construct_potential = {
-		building_requirement_castle_city_church = { LEVEL = 01 }
-		building_requirement_tribal = no
-		barony = title:b_parravon
-	}
-	
-	can_construct_showing_failures_only = {
-		
-		culture = {
-			has_innovation = innovation_castle_baileys
-		}
-	}
-	
-	is_enabled = {
-		county.holder = { has_title = prev.duchy }
-		county.holder = { has_cultural_pillar = heritage_bretonnian }
-	}
-	show_disabled = yes
-	
-	cost_gold = expensive_building_tier_4_cost
-	
-	max_garrison = good_building_max_garrison_tier_2
-	
-	province_modifier = {
-		fort_level = 8
-		defender_holding_advantage = 20
-		stationed_flying_unit_damage_mult = very_high_maa_damage_tier_2
-		stationed_flying_unit_toughness_mult = very_high_maa_toughness_tier_2
-		stationed_flying_unit_screen_mult = very_high_maa_screen_tier_2
-		stationed_flying_unit_pursuit_mult = very_high_maa_pursuit_tier_2
-	}
-	
-	county_modifier = {
-		monthly_county_control_change_add = 0.2
-		tax_mult = 0.2
-		levy_size = 0.2
-	}
-	
-	next_building = castle_parravon_03
-	
-	type = duchy_capital
-	
-	flag = travel_point_of_interest_martial
-	
-	ai_value = {
-		base = 100
-		culture_likely_to_fortify_modifier = yes
-		modifier = { # Fill all building slots before going for special buildings
-			factor = 0
-			free_building_slots > 0
-		}
-	}
-}
-
-castle_parravon_03 = {
-	construction_time = slow_construction_time
-
-	can_construct_potential = {
-		building_requirement_castle_city_church = { LEVEL = 01 }
-		building_requirement_tribal = no
-		barony = title:b_parravon
-	}
-	
-	can_construct_showing_failures_only = {
-		
-		culture = {
-			has_innovation = innovation_royal_armory
-		}
-	}
-	
-	is_enabled = {
-		county.holder = { has_title = prev.duchy }
-		county.holder = { has_cultural_pillar = heritage_bretonnian }
-	}
-	show_disabled = yes
-	
-	cost_gold = expensive_building_tier_5_cost
-	
-	max_garrison = good_building_max_garrison_tier_4
-	
-	province_modifier = {
-		fort_level = 12
-		defender_holding_advantage = 30
-		stationed_flying_unit_damage_mult = very_high_maa_damage_tier_3
-		stationed_flying_unit_toughness_mult = very_high_maa_toughness_tier_3
-		stationed_flying_unit_screen_mult = very_high_maa_screen_tier_2
-		stationed_flying_unit_pursuit_mult = very_high_maa_pursuit_tier_3
-	}
-	
-	county_modifier = {
-		monthly_county_control_change_add = 0.3
-		tax_mult = 0.3
-		levy_size = 0.3
-	}
-	
-	type = duchy_capital
-	
-	flag = travel_point_of_interest_martial
-	
-	flag = fully_upgraded_duchy_capital_building
-	
-	ai_value = {
-		base = 100
-		culture_likely_to_fortify_modifier = yes
-		modifier = { # Fill all building slots before going for special buildings
-			factor = 0
-			free_building_slots > 0
-		}
-	}
-}
+#castle_parravon_02 = {
+	#construction_time = slow_construction_time
+#
+	#can_construct_potential = {
+		#building_requirement_castle_city_church = { LEVEL = 01 }
+		#building_requirement_tribal = no
+		#barony = title:b_parravon
+	#}
+#	
+	#can_construct_showing_failures_only = {
+#		
+		#culture = {
+			#has_innovation = innovation_castle_baileys
+		#}
+	#}
+#	
+	#is_enabled = {
+		#county.holder = { has_title = prev.duchy }
+		#county.holder = { has_cultural_pillar = heritage_bretonnian }
+	#}
+	#show_disabled = yes
+#	
+	#cost_gold = expensive_building_tier_4_cost
+#	
+	#max_garrison = good_building_max_garrison_tier_2
+#	
+	#province_modifier = {
+		#fort_level = 8
+		#defender_holding_advantage = 20
+		#stationed_flying_unit_damage_mult = very_high_maa_damage_tier_2
+		#stationed_flying_unit_toughness_mult = very_high_maa_toughness_tier_2
+		#stationed_flying_unit_screen_mult = very_high_maa_screen_tier_2
+		#stationed_flying_unit_pursuit_mult = very_high_maa_pursuit_tier_2
+	#}
+#	
+	#county_modifier = {
+		#monthly_county_control_change_add = 0.2
+		#tax_mult = 0.2
+		#levy_size = 0.2
+	#}
+#	
+	#next_building = castle_parravon_03
+#	
+	#type = duchy_capital
+#	
+	#flag = travel_point_of_interest_martial
+#	
+	#ai_value = {
+		#base = 100
+		#culture_likely_to_fortify_modifier = yes
+		#modifier = { # Fill all building slots before going for special buildings
+			#factor = 0
+			#free_building_slots > 0
+		#}
+	#}
+#}
+#
+#castle_parravon_03 = {
+	#construction_time = slow_construction_time
+#
+	#can_construct_potential = {
+		#building_requirement_castle_city_church = { LEVEL = 01 }
+		#building_requirement_tribal = no
+		#barony = title:b_parravon
+	#}
+#	
+	#can_construct_showing_failures_only = {
+#		
+		#culture = {
+			#has_innovation = innovation_royal_armory
+		#}
+	#}
+#	
+	#is_enabled = {
+		#county.holder = { has_title = prev.duchy }
+		#county.holder = { has_cultural_pillar = heritage_bretonnian }
+	#}
+	#show_disabled = yes
+#	
+	#cost_gold = expensive_building_tier_5_cost
+#	
+	#max_garrison = good_building_max_garrison_tier_4
+#	
+	#province_modifier = {
+		#fort_level = 12
+		#defender_holding_advantage = 30
+		#stationed_flying_unit_damage_mult = very_high_maa_damage_tier_3
+		#stationed_flying_unit_toughness_mult = very_high_maa_toughness_tier_3
+		#stationed_flying_unit_screen_mult = very_high_maa_screen_tier_3
+		#stationed_flying_unit_pursuit_mult = very_high_maa_pursuit_tier_3
+	#}
+#	
+	#county_modifier = {
+		#monthly_county_control_change_add = 0.3
+		#tax_mult = 0.3
+		#levy_size = 0.3
+	#}
+#
+	#ype = duchy_capital
+#
+	#lag = travel_point_of_interest_martial
+#
+	#lag = fully_upgraded_duchy_capital_building
+#
+	#i_value = {
+		#ase = 100
+		#ulture_likely_to_fortify_modifier = yes
+		#odifier = { # Fill all building slots before going for special buildings
+			#actor = 0
+			#ree_building_slots > 0
+		#
+	#
+#
 
 castle_lyonesse_01 = {
 	construction_time = slow_construction_time
@@ -1930,20 +1969,13 @@ castle_lyonesse_01 = {
 		hostile_raid_time = 0.5
 		fort_level = 4
 		defender_holding_advantage = 10
-		stationed_maa_damage_mult = normal_maa_damage_tier_1
-		stationed_maa_toughness_mult = very_high_maa_toughness_tier_1
 	}
 	
-	county_modifier = {
-		monthly_county_control_change_add = 0.1
-	}
-
-	
-	next_building = castle_lyonesse_02
+	#next_building = castle_lyonesse_02
 
 	type_icon = "icon_structure_falak_ol_aflak_citadel.dds"
 	
-	type = duchy_capital
+	type = special
 	
 	flag = travel_point_of_interest_martial
 	
@@ -1956,299 +1988,291 @@ castle_lyonesse_01 = {
 		}
 	}
 }
+#
+#castle_lyonesse_02 = {
+	#construction_time = slow_construction_time
+#
+	#can_construct_potential = {
+		#building_requirement_castle_city_church = { LEVEL = 01 }
+		#building_requirement_tribal = no
+		#barony = title:b_lyonesse
+	#}
+#	
+	#can_construct_showing_failures_only = {
+#		
+		#culture = {
+			#has_innovation = innovation_castle_baileys
+		#}
+	#}
+#	
+	#is_enabled = {
+		#county.holder = { has_title = prev.duchy }
+		#county.holder = { has_cultural_pillar = heritage_bretonnian }
+	#}
+	#show_disabled = yes
+#	
+	#cost_gold = expensive_building_tier_4_cost
+#	
+	#max_garrison = good_building_max_garrison_tier_2
+#	
+	#character_modifier = {
+		#monthly_prestige_gain_mult = 0.1
+		#stress_gain_mult = -0.15
+	#}
+#	
+	#province_modifier = {
+		#monthly_income = 0.5
+		#hostile_raid_time = 1
+		#fort_level = 8
+		#defender_holding_advantage = 20
+		#stationed_maa_damage_mult = normal_maa_damage_tier_2
+		#stationed_maa_toughness_mult = very_high_maa_toughness_tier_2
+	#}
+#	
+	#county_modifier = {
+		#monthly_county_control_change_add = 0.2
+	#}
+#	
+	#next_building = castle_lyonesse_03
+#	
+	#type = duchy_capital
+#	
+	#ai_value = {
+		#base = 100
+		#culture_likely_to_fortify_modifier = yes
+		#modifier = { # Fill all building slots before going for special buildings
+			#factor = 0
+			#free_building_slots > 0
+		#}
+	#}
+#}
+#
+#castle_lyonesse_03 = {
+	#construction_time = slow_construction_time
+#
+	#can_construct_potential = {
+		#building_requirement_castle_city_church = { LEVEL = 01 }
+		#building_requirement_tribal = no
+		#barony = title:b_lyonesse
+	#}
+#	
+	#can_construct_showing_failures_only = {
+#		
+		#culture = {
+			#has_innovation = innovation_royal_armory
+		#}
+	#}
+#	
+	#is_enabled = {
+		#county.holder = { has_title = prev.duchy }
+		#county.holder = { has_cultural_pillar = heritage_bretonnian }
+	#}
+	#show_disabled = yes
+#	
+	#cost_gold = expensive_building_tier_5_cost
+#	
+	#max_garrison = good_building_max_garrison_tier_4
+#	
+	#character_modifier = {
+		#monthly_prestige_gain_mult = 0.15
+		#stress_gain_mult = -0.20
+	#}
+#	
+	#province_modifier = {
+		#monthly_income = 1
+		#hostile_raid_time = 1.5
+		#fort_level = 12
+		#defender_holding_advantage = 30
+		#stationed_maa_damage_mult = normal_maa_damage_tier_3
+		#stationed_maa_toughness_mult = very_high_maa_toughness_tier_3
+	#}
+#	
+	#county_modifier = {
+		#monthly_county_control_change_add = 0.3
+	#}
+#	
+	#type = duchy_capital
+#	
+	#flag = fully_upgraded_duchy_capital_building
+#	
+	#ai_value = {
+		#base = 100
+		#culture_likely_to_fortify_modifier = yes
+		#modifier = { # Fill all building slots before going for special buildings
+			#factor = 0
+			#free_building_slots > 0
+		#}
+	#}
+#}
+#
+#castle_bordeleaux_01 = {
+	#construction_time = slow_construction_time
+#
+	#can_construct_potential = {
+		#building_requirement_castle_city_church = { LEVEL = 01 }
+		#building_requirement_tribal = no
+		#barony = title:b_bordeleaux
+	#}
+#	
+	#can_construct_showing_failures_only = {
+#		
+		#culture = {
+			#has_innovation = innovation_burhs
+		#}
+	#}
+	#is_enabled = {
+		#county.holder = { has_title = prev.duchy }
+		#county.holder = { has_cultural_pillar = heritage_bretonnian }
+	#}
+	#show_disabled = yes
+#	
+	#cost_gold = expensive_building_tier_3_cost
+#	
+	#max_garrison = good_building_max_garrison_tier_1
+#	
+	#province_modifier = {
+		#hostile_raid_time = 0.2
+		#fort_level = 3
+		#defender_holding_advantage = 5
+	#}
+#
+	#next_building = castle_bordeleaux_02
+#
+	#type_icon = "icon_structure_walls_of_genoa.dds"
+#	
+	#type = special
+#	
+	#flag = travel_point_of_interest_martial
+#	
+	#ai_value = {
+		#base = 100
+		#culture_likely_to_fortify_modifier = yes
+		#modifier = { # Fill all building slots before going for special buildings
+			#factor = 0
+			#free_building_slots > 0
+		#}
+	#}
+#}
 
-castle_lyonesse_02 = {
-	construction_time = slow_construction_time
-
-	can_construct_potential = {
-		building_requirement_castle_city_church = { LEVEL = 01 }
-		building_requirement_tribal = no
-		barony = title:b_lyonesse
-	}
-	
-	can_construct_showing_failures_only = {
-		
-		culture = {
-			has_innovation = innovation_castle_baileys
-		}
-	}
-	
-	is_enabled = {
-		county.holder = { has_title = prev.duchy }
-		county.holder = { has_cultural_pillar = heritage_bretonnian }
-	}
-	show_disabled = yes
-	
-	cost_gold = expensive_building_tier_4_cost
-	
-	max_garrison = good_building_max_garrison_tier_2
-	
-	character_modifier = {
-		monthly_prestige_gain_mult = 0.1
-		stress_gain_mult = -0.15
-	}
-	
-	province_modifier = {
-		hostile_raid_time = 1
-		fort_level = 8
-		defender_holding_advantage = 20
-		stationed_maa_damage_mult = normal_maa_damage_tier_2
-		stationed_maa_toughness_mult = very_high_maa_toughness_tier_2
-	}
-	
-	county_modifier = {
-		monthly_county_control_change_add = 0.2
-	}
-	
-	next_building = castle_lyonesse_03
-	
-	type = duchy_capital
-	
-	ai_value = {
-		base = 100
-		culture_likely_to_fortify_modifier = yes
-		modifier = { # Fill all building slots before going for special buildings
-			factor = 0
-			free_building_slots > 0
-		}
-	}
-}
-
-castle_lyonesse_03 = {
-	construction_time = slow_construction_time
-
-	can_construct_potential = {
-		building_requirement_castle_city_church = { LEVEL = 01 }
-		building_requirement_tribal = no
-		barony = title:b_lyonesse
-	}
-	
-	can_construct_showing_failures_only = {
-		
-		culture = {
-			has_innovation = innovation_royal_armory
-		}
-	}
-	
-	is_enabled = {
-		county.holder = { has_title = prev.duchy }
-		county.holder = { has_cultural_pillar = heritage_bretonnian }
-	}
-	show_disabled = yes
-	
-	cost_gold = expensive_building_tier_5_cost
-	
-	max_garrison = good_building_max_garrison_tier_4
-	
-	character_modifier = {
-		monthly_prestige_gain_mult = 0.15
-		stress_gain_mult = -0.20
-	}
-	
-	province_modifier = {
-		hostile_raid_time = 1.5
-		fort_level = 12
-		defender_holding_advantage = 30
-		stationed_maa_damage_mult = normal_maa_damage_tier_3
-		stationed_maa_toughness_mult = very_high_maa_toughness_tier_3
-	}
-	
-	county_modifier = {
-		monthly_county_control_change_add = 0.3
-	}
-	
-	type = duchy_capital
-	
-	flag = fully_upgraded_duchy_capital_building
-	
-	ai_value = {
-		base = 100
-		culture_likely_to_fortify_modifier = yes
-		modifier = { # Fill all building slots before going for special buildings
-			factor = 0
-			free_building_slots > 0
-		}
-	}
-}
-
-castle_bordeleaux_01 = {
-	construction_time = slow_construction_time
-
-	can_construct_potential = {
-		building_requirement_castle_city_church = { LEVEL = 01 }
-		building_requirement_tribal = no
-		barony = title:b_bordeleaux
-	}
-	
-	can_construct_showing_failures_only = {
-		
-		culture = {
-			has_innovation = innovation_burhs
-		}
-	}
-	is_enabled = {
-		county.holder = { has_title = prev.duchy }
-		county.holder = { has_cultural_pillar = heritage_bretonnian }
-	}
-	show_disabled = yes
-	
-	cost_gold = expensive_building_tier_3_cost
-	
-	max_garrison = good_building_max_garrison_tier_1
-	
-	province_modifier = {
-		monthly_income = 0.5
-		hostile_raid_time = 0.2
-		fort_level = 3
-		defender_holding_advantage = 5
-		stationed_heavy_cavalry_damage_mult = normal_maa_damage_tier_1
-		stationed_heavy_cavalry_toughness_mult = normal_maa_toughness_tier_1
-		stationed_heavy_cavalry_pursuit_mult = normal_maa_pursuit_tier_1
-	}
-	
-	county_modifier = {
-		monthly_county_control_change_add = 0.1
-		tax_mult = 0.1
-		levy_size = 0.1
-		development_growth_factor = 0.1
-	}
-
-	
-	next_building = castle_bordeleaux_02
-
-	type_icon = "icon_structure_walls_of_genoa.dds"
-	
-	type = duchy_capital
-	
-	flag = travel_point_of_interest_martial
-	
-	ai_value = {
-		base = 100
-		culture_likely_to_fortify_modifier = yes
-		modifier = { # Fill all building slots before going for special buildings
-			factor = 0
-			free_building_slots > 0
-		}
-	}
-}
-
-castle_bordeleaux_02 = {
-	construction_time = slow_construction_time
-
-	can_construct_potential = {
-		building_requirement_castle_city_church = { LEVEL = 01 }
-		building_requirement_tribal = no
-		barony = title:b_bordeleaux
-	}
-	
-	can_construct_showing_failures_only = {
-		
-		culture = {
-			has_innovation = innovation_castle_baileys
-		}
-	}
-	
-	is_enabled = {
-		county.holder = { has_title = prev.duchy }
-		county.holder = { has_cultural_pillar = heritage_bretonnian }
-	}
-	show_disabled = yes
-	
-	cost_gold = expensive_building_tier_4_cost
-	
-	max_garrison = good_building_max_garrison_tier_2
-	
-	province_modifier = {
-		monthly_income = 1
-		hostile_raid_time = 0.5
-		fort_level = 6
-		defender_holding_advantage = 10
-		stationed_heavy_cavalry_damage_mult = normal_maa_damage_tier_2
-		stationed_heavy_cavalry_toughness_mult = normal_maa_toughness_tier_2
-		stationed_heavy_cavalry_pursuit_mult = normal_maa_pursuit_tier_2
-	}
-	
-	county_modifier = {
-		monthly_county_control_change_add = 0.2
-		tax_mult = 0.2
-		levy_size = 0.2
-		development_growth_factor = 0.2
-	}
-	
-	next_building = castle_bordeleaux_03
-	
-	type = duchy_capital
-	
-	flag = travel_point_of_interest_martial
-	
-	ai_value = {
-		base = 100
-		culture_likely_to_fortify_modifier = yes
-		modifier = { # Fill all building slots before going for special buildings
-			factor = 0
-			free_building_slots > 0
-		}
-	}
-}
-
-castle_bordeleaux_03 = {
-	construction_time = slow_construction_time
-
-	can_construct_potential = {
-		building_requirement_castle_city_church = { LEVEL = 01 }
-		building_requirement_tribal = no
-		barony = title:b_bordeleaux
-	}
-	
-	can_construct_showing_failures_only = {
-		
-		culture = {
-			has_innovation = innovation_royal_armory
-		}
-	}
-	
-	is_enabled = {
-		county.holder = { has_title = prev.duchy }
-		county.holder = { has_cultural_pillar = heritage_bretonnian }
-	}
-	show_disabled = yes
-	
-	cost_gold = expensive_building_tier_5_cost
-	
-	max_garrison = good_building_max_garrison_tier_4
-	
-	province_modifier = {
-		monthly_income = 2
-		hostile_raid_time = 1
-		fort_level = 10
-		defender_holding_advantage = 20
-		stationed_heavy_cavalry_damage_mult = normal_maa_damage_tier_3
-		stationed_heavy_cavalry_toughness_mult = normal_maa_toughness_tier_3
-		stationed_heavy_cavalry_pursuit_mult = normal_maa_pursuit_tier_3
-	}
-	
-	county_modifier = {
-		monthly_county_control_change_add = 0.3
-		tax_mult = 0.3
-		levy_size = 0.3
-		development_growth_factor = 0.3
-	}
-	
-	type = duchy_capital
-	
-	flag = travel_point_of_interest_martial
-	
-	flag = fully_upgraded_duchy_capital_building
-	
-	ai_value = {
-		base = 100
-		culture_likely_to_fortify_modifier = yes
-		modifier = { # Fill all building slots before going for special buildings
-			factor = 0
-			free_building_slots > 0
-		}
-	}
-}
+#castle_bordeleaux_02 = {
+	#construction_time = slow_construction_time
+#
+	#can_construct_potential = {
+		#building_requirement_castle_city_church = { LEVEL = 01 }
+		#building_requirement_tribal = no
+		#barony = title:b_bordeleaux
+	#}
+#	
+	#can_construct_showing_failures_only = {
+#		
+		#culture = {
+			#has_innovation = innovation_castle_baileys
+		#}
+	#}
+#	
+	#is_enabled = {
+		#county.holder = { has_title = prev.duchy }
+		#county.holder = { has_cultural_pillar = heritage_bretonnian }
+	#}
+	#show_disabled = yes
+#	
+	#cost_gold = expensive_building_tier_4_cost
+#	
+	#max_garrison = good_building_max_garrison_tier_2
+#	
+	#province_modifier = {
+		#monthly_income = 1
+		#hostile_raid_time = 0.5
+		#fort_level = 6
+		#defender_holding_advantage = 10
+		#stationed_heavy_cavalry_damage_mult = very_high_maa_damage_tier_2
+		#stationed_heavy_cavalry_toughness_mult = very_high_maa_toughness_tier_2
+		#stationed_heavy_cavalry_pursuit_mult = very_high_maa_pursuit_tier_2
+		#stationed_heavy_cavalry_screen_mult = very_high_maa_screen_tier_2
+	#}
+#	
+	#county_modifier = {
+		#monthly_county_control_change_add = 0.2
+		#tax_mult = 0.2
+		#levy_size = 0.2
+		#development_growth_factor = 0.2
+	#}
+#	
+	#next_building = castle_bordeleaux_03
+#	
+	#type = duchy_capital
+#	
+	#flag = travel_point_of_interest_martial
+#	
+	#ai_value = {
+		#base = 100
+		#culture_likely_to_fortify_modifier = yes
+		#modifier = { # Fill all building slots before going for special buildings
+			#factor = 0
+			#free_building_slots > 0
+		#}
+	#}
+#}
+#
+#castle_bordeleaux_03 = {
+	#construction_time = slow_construction_time
+#
+	#can_construct_potential = {
+		#building_requirement_castle_city_church = { LEVEL = 01 }
+		#building_requirement_tribal = no
+		#barony = title:b_bordeleaux
+	#}
+#	
+	#can_construct_showing_failures_only = {
+#		
+		#culture = {
+			#has_innovation = innovation_royal_armory
+		#}
+	#}
+#	
+	#is_enabled = {
+		#county.holder = { has_title = prev.duchy }
+		#county.holder = { has_cultural_pillar = heritage_bretonnian }
+	#}
+	#show_disabled = yes
+#	
+	#cost_gold = expensive_building_tier_5_cost
+#	
+	#max_garrison = good_building_max_garrison_tier_4
+#	
+	#province_modifier = {
+		#monthly_income = 2
+		#hostile_raid_time = 1
+		#fort_level = 10
+		#defender_holding_advantage = 20
+		#stationed_heavy_cavalry_damage_mult = very_high_maa_damage_tier_3
+		#stationed_heavy_cavalry_toughness_mult = very_high_maa_toughness_tier_3
+		#stationed_heavy_cavalry_pursuit_mult = very_high_maa_pursuit_tier_3
+		#stationed_heavy_cavalry_screen_mult = very_high_maa_screen_tier_3
+	#}
+#	
+	#county_modifier = {
+		#monthly_county_control_change_add = 0.3
+		#tax_mult = 0.3
+		#levy_size = 0.3
+		#development_growth_factor = 0.3
+	#}
+#	
+	#type = duchy_capital
+#	
+	#flag = travel_point_of_interest_martial
+#	
+	#flag = fully_upgraded_duchy_capital_building
+#	
+	#ai_value = {
+		#base = 100
+		#culture_likely_to_fortify_modifier = yes
+		#modifier = { # Fill all building slots before going for special buildings
+			#factor = 0
+			#free_building_slots > 0
+		#}
+	#}
+#}
 
 castle_brionne_01 = {
 	construction_time = slow_construction_time
@@ -2274,31 +2298,25 @@ castle_brionne_01 = {
 	cost_gold = expensive_building_tier_3_cost
 	
 	character_modifier = {
-		monthly_prestige_gain_mult = 0.1
+		monthly_prestige = 0.1
 	}
 	
 	max_garrison = good_building_max_garrison_tier_1
 	province_modifier = {
-		defender_holding_advantage = 3
+		defender_holding_advantage = 5
 		fort_level = 1
 		monthly_income = 0.5
-		stationed_heavy_cavalry_damage_mult = normal_maa_damage_tier_1
-		stationed_heavy_cavalry_toughness_mult = normal_maa_toughness_tier_1
-		stationed_heavy_cavalry_pursuit_mult = normal_maa_pursuit_tier_1
 	}
 	
 	county_modifier = {
-		monthly_county_control_change_add = 0.1
-		tax_mult = 0.1
-		development_growth_factor = 0.1
 		county_opinion_add = 10
 	}
 	
-	next_building = castle_brionne_02
+	#next_building = castle_brionne_02
 
 	type_icon = "icon_structure_walls_of_genoa.dds"
 	
-	type = duchy_capital
+	type = special
 	
 	flag = travel_point_of_interest_learning
 	
@@ -2311,207 +2329,523 @@ castle_brionne_01 = {
 		}
 	}
 }
-
-castle_brionne_02 = {
-	construction_time = slow_construction_time
-
-	can_construct_potential = {
-		building_requirement_castle_city_church = { LEVEL = 01 }
-		building_requirement_tribal = no
-		barony = title:b_brionne
-	}
-	
-	can_construct_showing_failures_only = {
-		
-		culture = {
-			has_innovation = innovation_castle_baileys
-		}
-	}
-	
-	is_enabled = {
-		county.holder = { has_title = prev.duchy }
-		county.holder = { has_cultural_pillar = heritage_bretonnian }
-	}
-	show_disabled = yes
-	
-	cost_gold = expensive_building_tier_4_cost
-	
-	character_modifier = {
-		monthly_prestige_gain_mult = 0.2
-	}
-	
-	max_garrison = good_building_max_garrison_tier_2
-	province_modifier = {
-		defender_holding_advantage = 6
-		fort_level = 2
-		monthly_income = 1
-		stationed_heavy_cavalry_damage_mult = normal_maa_damage_tier_2
-		stationed_heavy_cavalry_toughness_mult = normal_maa_toughness_tier_2
-		stationed_heavy_cavalry_pursuit_mult = normal_maa_pursuit_tier_2
-	}
-	
-	county_modifier = {
-		tax_mult = 0.2
-		development_growth_factor = 0.2
-		county_opinion_add = 20
-	}
-	
-	next_building = castle_brionne_03
-	
-	type = duchy_capital
-	
-	flag = travel_point_of_interest_learning
-	
-	ai_value = {
-		base = 100
-		culture_likely_to_fortify_modifier = yes
-		modifier = { # Fill all building slots before going for special buildings
-			factor = 0
-			free_building_slots > 0
-		}
-	}
-}
-
-castle_brionne_03 = {
-	construction_time = slow_construction_time
-
-	can_construct_potential = {
-		building_requirement_castle_city_church = { LEVEL = 01 }
-		building_requirement_tribal = no
-		barony = title:b_brionne
-	}
-	
-	can_construct_showing_failures_only = {
-		
-		culture = {
-			has_innovation = innovation_royal_armory
-		}
-	}
-	
-	is_enabled = {
-		county.holder = { has_title = prev.duchy }
-		county.holder = { has_cultural_pillar = heritage_bretonnian }
-	}
-	show_disabled = yes
-	
-	cost_gold = expensive_building_tier_5_cost
-	
-	character_modifier = {
-		monthly_prestige_gain_mult = 0.3
-	}
-	
-	max_garrison = good_building_max_garrison_tier_4
-	province_modifier = {
-		defender_holding_advantage = 10
-		fort_level = 4
-		monthly_income = 2
-		stationed_heavy_cavalry_damage_mult = normal_maa_damage_tier_3
-		stationed_heavy_cavalry_toughness_mult = normal_maa_toughness_tier_3
-		stationed_heavy_cavalry_pursuit_mult = normal_maa_pursuit_tier_3
-	}
-	county_modifier = {
-		tax_mult = 0.3
-		development_growth_factor = 0.3
-		county_opinion_add = 30
-	}
-	
-	type = duchy_capital
-	
-	flag = travel_point_of_interest_learning
-	
-	flag = fully_upgraded_duchy_capital_building
-	
-	ai_value = {
-		base = 100
-		culture_likely_to_fortify_modifier = yes
-		modifier = { # Fill all building slots before going for special buildings
-			factor = 0
-			free_building_slots > 0
-		}
-	}
-}
-
+#
+#castle_brionne_02 = {
+	#construction_time = slow_construction_time
+#
+	#can_construct_potential = {
+		#building_requirement_castle_city_church = { LEVEL = 01 }
+		#building_requirement_tribal = no
+		#barony = title:b_brionne
+	#}
+#	
+	#can_construct_showing_failures_only = {
+#		
+		#culture = {
+			#has_innovation = innovation_castle_baileys
+		#}
+	#}
+#	
+	#is_enabled = {
+		#county.holder = { has_title = prev.duchy }
+		#county.holder = { has_cultural_pillar = heritage_bretonnian }
+	#}
+	#show_disabled = yes
+#	
+	#cost_gold = expensive_building_tier_4_cost
+#	
+	#character_modifier = {
+		#monthly_prestige_gain_mult = 0.2
+	#}
+#	
+	#max_garrison = good_building_max_garrison_tier_2
+	#province_modifier = {
+		#defender_holding_advantage = 6
+		#fort_level = 2
+		#monthly_income = 1
+		#stationed_heavy_cavalry_damage_mult = very_high_maa_damage_tier_2
+		#stationed_heavy_cavalry_toughness_mult = very_high_maa_toughness_tier_2
+		#stationed_heavy_cavalry_pursuit_mult = very_high_maa_pursuit_tier_2
+		#stationed_heavy_cavalry_screen_mult = very_high_maa_screen_tier_2
+	#}
+#	
+	#county_modifier = {
+		#tax_mult = 0.2
+		#development_growth_factor = 0.2
+		#county_opinion_add = 20
+	#}
+#	
+	#next_building = castle_brionne_03
+#	
+	#type = duchy_capital
+#	
+	#flag = travel_point_of_interest_learning
+#	
+	#ai_value = {
+		#base = 100
+		#culture_likely_to_fortify_modifier = yes
+		#modifier = { # Fill all building slots before going for special buildings
+			#factor = 0
+			#free_building_slots > 0
+		#}
+	#}
+#}
+#
+#castle_brionne_03 = {
+	#construction_time = slow_construction_time
+#
+	#can_construct_potential = {
+		#building_requirement_castle_city_church = { LEVEL = 01 }
+		#building_requirement_tribal = no
+		#barony = title:b_brionne
+	#}
+#	
+	#can_construct_showing_failures_only = {
+#		
+		#culture = {
+			#has_innovation = innovation_royal_armory
+		#}
+	#}
+#	
+	#is_enabled = {
+		#county.holder = { has_title = prev.duchy }
+		#county.holder = { has_cultural_pillar = heritage_bretonnian }
+	#}
+	#show_disabled = yes
+#	
+	#cost_gold = expensive_building_tier_5_cost
+#	
+	#character_modifier = {
+		#monthly_prestige_gain_mult = 0.3
+	#}
+#	
+	#max_garrison = good_building_max_garrison_tier_4
+	#province_modifier = {
+		#defender_holding_advantage = 10
+		#fort_level = 4
+		#monthly_income = 2
+		#stationed_heavy_cavalry_damage_mult = very_high_maa_damage_tier_3
+		#stationed_heavy_cavalry_toughness_mult = very_high_maa_toughness_tier_3
+		#stationed_heavy_cavalry_pursuit_mult = very_high_maa_pursuit_tier_3
+		#stationed_heavy_cavalry_screen_mult = very_high_maa_screen_tier_3
+	#}
+	#county_modifier = {
+		#tax_mult = 0.3
+		#development_growth_factor = 0.3
+		#county_opinion_add = 30
+	#}
+#	
+	#type = duchy_capital
+#	
+	#flag = travel_point_of_interest_learning
+#	
+	#flag = fully_upgraded_duchy_capital_building
+#	
+	#ai_value = {
+		#base = 100
+		#culture_likely_to_fortify_modifier = yes
+		#modifier = { # Fill all building slots before going for special buildings
+			#factor = 0
+			#free_building_slots > 0
+		#}
+	#}
+#}
+#
 
 #Estalia
+ city_bilbali_01 = {
 
-# city_bilbali_01 = {
-	
-	# construction_time = very_slow_construction_time
-	
-	# type_icon = "icon_structure_walls_of_genoa.dds"
-	
-	# can_construct_potential = {
-		# barony = title:b_bilbali
-		# building_requirement_tribal = no
-	# }
-	
-	# cost_gold = 800
-	
-	# max_garrison = good_building_max_garrison_tier_1
-	# province_modifier = {
-		# defender_holding_advantage = normal_building_advantage_tier_1
-		# fort_level = good_building_fort_level_tier_1
-		# monthly_income = 2
-	# }
-	# county_modifier = {
-		# tax_mult = 0.1
-		# development_growth_factor = 0.1
-	# }
-	
-	# ai_value = {
-		# base = 100
-		# culture_likely_to_fortify_modifier = yes
-	# }
-	
-	# type = duchy_capital
+	 construction_time = very_slow_construction_time
 
-	# flag = travel_point_of_interest_martial
-# }
+	 type_icon = "icon_structure_walls_of_genoa.dds"
 
-# city_magritta_01 = {
-	
-	# construction_time = very_slow_construction_time
-	
-	# type_icon = "icon_structure_walls_of_genoa.dds"
-	
-	# can_construct_potential = {
-		# barony = title:b_magritta
-		# building_requirement_tribal = no
-	# }
-	
-	# cost_gold = 800
+	 can_construct_potential = {
+		 barony = title:b_bilbali
+		 building_requirement_tribal = no
+	 }
 
-	# max_garrison = good_building_max_garrison_tier_1
-	# province_modifier = {
-		# defender_holding_advantage = normal_building_advantage_tier_1
-		# fort_level = good_building_fort_level_tier_1
-		# monthly_income = 3
-	# }
-	# county_modifier = {
-		# tax_mult = 0.1
-		# development_growth_factor = 0.1
-	# }
-	
-	# ai_value = {
-		# base = 100
-		# culture_likely_to_fortify_modifier = yes
-	# }
-	
-	# type = duchy_capital
+	 cost_gold = 800
 
-	# flag = travel_point_of_interest_martial
-# }
+	 max_garrison = good_building_max_garrison_tier_1
+	 province_modifier = {
+		 defender_holding_advantage = normal_building_advantage_tier_1
+		 fort_level = good_building_fort_level_tier_1
+		 monthly_income = 2
+	 }
+	 county_modifier = {
+		development_growth_factor = 0.1
+		development_growth = 0.10
+	 }
 
-estalian_great_city_01 = {
+	 ai_value = {
+		 base = 100
+		 culture_likely_to_fortify_modifier = yes
+	 }
+
+	 type = special
+	 flag = travel_point_of_interest_martial
+ }
+ #city_magritta_01 = {
+#
+	 #construction_time = very_slow_construction_time
+#
+	 #type_icon = "icon_structure_walls_of_genoa.dds"
+#
+	 #can_construct_potential = {
+		 #barony = title:b_magritta
+		 #building_requirement_tribal = no
+	 #}
+#
+	 #cost_gold = 800
+	 #max_garrison = good_building_max_garrison_tier_1
+	 #province_modifier = {
+		 #defender_holding_advantage = normal_building_advantage_tier_1
+		 #fort_level = good_building_fort_level_tier_1
+		 #monthly_income = 2
+	 #}
+	 #county_modifier = {
+		 #development_growth_factor = 0.1
+	 #}
+#
+	 #ai_value = {
+		 #base = 100
+		 #culture_likely_to_fortify_modifier = yes
+	 #}
+#
+	 #type = special
+	 #flag = travel_point_of_interest_martial
+ #}
+#
+#estalian_great_city_01 = {
+	#construction_time = slow_construction_time
+#
+	#can_construct_potential = {
+		#building_requirement_castle_city_church = { LEVEL = 01 }
+		#building_requirement_tribal = no
+		#OR = {
+			#barony = title:b_bilbali
+			#barony = title:b_magritta
+		#}
+	#}
+#	
+	#can_construct_showing_failures_only = {
+#		
+		#culture = {
+			#has_innovation = innovation_burhs
+		#}
+	#}
+#	
+	#is_enabled = {
+		#county.holder = { has_title = prev.duchy }
+	#}
+	#show_disabled = yes
+#	
+	#cost_gold = expensive_building_tier_3_cost
+#	
+	#max_garrison = good_building_max_garrison_tier_1
+#	
+	#province_modifier = {
+		#defender_holding_advantage = normal_building_advantage_tier_1
+		#fort_level = good_building_fort_level_tier_1
+		#monthly_income = 1
+		#stationed_maa_damage_mult = normal_maa_damage_tier_1
+		#stationed_maa_toughness_mult = normal_maa_toughness_tier_1
+		#stationed_maa_screen_mult = normal_maa_screen_tier_1
+		#stationed_maa_pursuit_mult = normal_maa_pursuit_tier_1
+	#}
+#	
+	#county_modifier = {
+		#levy_size = 0.1
+		#tax_mult = 0.1
+		#development_growth_factor = 0.1
+		#garrison_size = 0.1
+	#}
+#	
+	#duchy_capital_county_modifier = {
+		#tax_mult = 0.02
+		#development_growth_factor = 0.02
+	#}
+#	
+	#next_building = estalian_great_city_02
+#
+	#type_icon = "icon_structure_walls_of_genoa.dds"
+#	
+	#type = duchy_capital
+#	
+	#ai_value = {
+		#base = 100
+		#culture_likely_to_fortify_modifier = yes
+		#modifier = { # Fill all building slots before going for special buildings
+			#factor = 0
+			#free_building_slots > 0
+		#}
+	#}
+#}
+#
+#estalian_great_city_02 = {
+	#construction_time = slow_construction_time
+#
+	#can_construct_potential = {
+		#building_requirement_castle_city_church = { LEVEL = 01 }
+		#building_requirement_tribal = no
+		#OR = {
+			#barony = title:b_bilbali
+			#barony = title:b_magritta
+		#}
+	#}
+#	
+	#can_construct_showing_failures_only = {
+#		
+		#culture = {
+			#has_innovation = innovation_castle_baileys
+		#}
+	#}
+#	
+	#is_enabled = {
+		#county.holder = { has_title = prev.duchy }
+	#}
+	#show_disabled = yes
+#	
+	#cost_gold = expensive_building_tier_4_cost
+#	
+	#max_garrison = good_building_max_garrison_tier_2
+#	
+	#province_modifier = {
+		#defender_holding_advantage = normal_building_advantage_tier_2
+		#fort_level = good_building_fort_level_tier_2
+		#monthly_income = 2
+		#stationed_maa_damage_mult = normal_maa_damage_tier_2
+		#stationed_maa_toughness_mult = normal_maa_toughness_tier_2
+		#stationed_maa_screen_mult = normal_maa_screen_tier_2
+		#stationed_maa_pursuit_mult = normal_maa_pursuit_tier_2
+	#}
+#	
+	#county_modifier = {
+		#levy_size = 0.2
+		#tax_mult = 0.2
+		#development_growth_factor = 0.2
+		#garrison_size = 0.2
+	#}
+#	
+	#duchy_capital_county_modifier = {
+		#tax_mult = 0.05
+		#development_growth_factor = 0.05
+	#}
+#	
+	#next_building = estalian_great_city_03
+#	
+	#type = duchy_capital
+#	
+	#ai_value = {
+		#base = 100
+		#culture_likely_to_fortify_modifier = yes
+		#modifier = { # Fill all building slots before going for special buildings
+			#factor = 0
+			#free_building_slots > 0
+		#}
+	#}
+#}
+#
+#estalian_great_city_03 = {
+	#construction_time = slow_construction_time
+#
+	#can_construct_potential = {
+		#building_requirement_castle_city_church = { LEVEL = 01 }
+		#building_requirement_tribal = no
+		#OR = {
+			#barony = title:b_bilbali
+			#barony = title:b_magritta
+		#}
+	#}
+#	
+	#can_construct_showing_failures_only = {
+#		
+		#culture = {
+			#has_innovation = innovation_royal_armory
+		#}
+	#}
+#	
+	#is_enabled = {
+		#county.holder = { has_title = prev.duchy }
+	#}
+	#show_disabled = yes
+#	
+	#cost_gold = expensive_building_tier_5_cost
+#	
+	#max_garrison = good_building_max_garrison_tier_3
+#	
+	#province_modifier = {
+		#defender_holding_advantage = normal_building_advantage_tier_3
+		#fort_level = good_building_fort_level_tier_3
+		#monthly_income = 3
+		#stationed_maa_damage_mult = normal_maa_damage_tier_3
+		#stationed_maa_toughness_mult = normal_maa_toughness_tier_3
+		#stationed_maa_screen_mult = normal_maa_screen_tier_3
+		#stationed_maa_pursuit_mult = normal_maa_pursuit_tier_3
+	#}
+#	
+	#county_modifier = {
+		#levy_size = 0.3
+		#tax_mult = 0.3
+		#development_growth_factor = 0.3
+		#garrison_size = 0.3
+	#}
+#	
+	#duchy_capital_county_modifier = {
+		#tax_mult = 0.10
+		#development_growth_factor = 0.10
+	#}
+#	
+	#type = duchy_capital
+#	
+	#flag = fully_upgraded_duchy_capital_building
+#	
+	#ai_value = {
+		#base = 100
+		#culture_likely_to_fortify_modifier = yes
+		#modifier = { # Fill all building slots before going for special buildings
+			#factor = 0
+			#free_building_slots > 0
+		#}
+	#}
+#}
+tor_karyndis_01 = {
 	construction_time = slow_construction_time
 
 	can_construct_potential = {
 		building_requirement_castle_city_church = { LEVEL = 01 }
 		building_requirement_tribal = no
-		OR = {
-			barony = title:b_bilbali
-			barony = title:b_magritta
+	}
+	
+	can_construct_showing_failures_only = {
+		
+		culture = {
+			has_innovation = innovation_burhs
 		}
+	}
+	show_disabled = yes
+	
+	cost_gold = 100
+	
+	province_modifier = {
+		county_opinion_add = -10
+		development_growth_factor = -0.2
+	}
+
+	character_modifier = {
+		stress_gain_mult = 0.20
+	}
+	
+	#next_building = castle_parravon_02
+
+	type_icon = "icon_structure_petra.dds"
+	
+	type = special
+	
+	flag = travel_point_of_interest_martial
+	
+	next_building = tor_karyndis_02
+
+	ai_value = {
+		base = 100
+		culture_likely_to_fortify_modifier = yes
+		modifier = { # Fill all building slots before going for special buildings
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+tor_karyndis_02 = {
+	construction_time = slow_construction_time
+
+	can_construct_potential = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		building_requirement_tribal = no
+	}
+	
+	can_construct_showing_failures_only = {
+		
+		culture = {
+			has_innovation = innovation_burhs
+		}
+	}
+	show_disabled = yes
+	
+	cost_gold = 800
+	
+	province_modifier = {
+		monthly_income = 1
+		development_growth_factor = 0.1
+	}
+
+	character_modifier = {
+		stress_gain_mult = -0.10
+		monthly_prestige = 0.10
+	}
+	
+	#next_building = castle_parravon_02
+
+	type_icon = "icon_structure_petra.dds"
+	
+	type = special
+	
+	flag = travel_point_of_interest_martial
+	
+	ai_value = {
+		base = 100
+		culture_likely_to_fortify_modifier = yes
+		modifier = { # Fill all building slots before going for special buildings
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
+
+valley_of_windmills_01 = {
+	
+	construction_time = slow_construction_time
+	
+	type_icon = "icon_building_windmills.dds" 
+	
+	can_construct_potential = {
+		scope:holder.culture = {
+			has_innovation = innovation_windmills
+		}
+	}
+	
+	cost_gold = 200
+	
+	county_modifier = {
+		build_gold_cost = -0.10
+	}
+
+	character_modifier = {
+		monthly_stewardship_lifestyle_xp_gain_mult = 0.10
+	}
+
+	ai_value = {
+		base = 100
+		modifier = { # Fill all building slots before going for special buildings
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+	
+	type = special
+
+	flag = travel_point_of_interest_economic
+}
+
+#Tilean
+ 
+castilla_diablos_01 = {
+	construction_time = slow_construction_time
+
+	can_construct_potential = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		building_requirement_tribal = no	
 	}
 	
 	can_construct_showing_failures_only = {
@@ -2531,204 +2865,77 @@ estalian_great_city_01 = {
 	max_garrison = good_building_max_garrison_tier_1
 	
 	province_modifier = {
-		defender_holding_advantage = normal_building_advantage_tier_1
-		fort_level = good_building_fort_level_tier_1
-		monthly_income = 1
-		stationed_maa_damage_mult = normal_maa_damage_tier_1
-		stationed_maa_toughness_mult = normal_maa_toughness_tier_1
-		stationed_maa_screen_mult = normal_maa_screen_tier_1
-		stationed_maa_pursuit_mult = normal_maa_pursuit_tier_1
+		defender_holding_advantage = 5
+		fort_level = 2
 	}
-	
+
 	county_modifier = {
-		levy_size = 0.1
-		tax_mult = 0.1
 		development_growth_factor = 0.1
-		garrison_size = 0.1
-	}
-	
-	duchy_capital_county_modifier = {
-		tax_mult = 0.02
-		development_growth_factor = 0.02
-	}
-	
-	next_building = estalian_great_city_02
-
-	type_icon = "icon_structure_walls_of_genoa.dds"
-	
-	type = duchy_capital
-	
-	ai_value = {
-		base = 100
-		culture_likely_to_fortify_modifier = yes
-		modifier = { # Fill all building slots before going for special buildings
-			factor = 0
-			free_building_slots > 0
-		}
-	}
-}
-
-estalian_great_city_02 = {
-	construction_time = slow_construction_time
-
-	can_construct_potential = {
-		building_requirement_castle_city_church = { LEVEL = 01 }
-		building_requirement_tribal = no
-		OR = {
-			barony = title:b_bilbali
-			barony = title:b_magritta
-		}
-	}
-	
-	can_construct_showing_failures_only = {
-		
-		culture = {
-			has_innovation = innovation_castle_baileys
-		}
-	}
-	
-	is_enabled = {
-		county.holder = { has_title = prev.duchy }
-	}
-	show_disabled = yes
-	
-	cost_gold = expensive_building_tier_4_cost
-	
-	max_garrison = good_building_max_garrison_tier_2
-	
-	province_modifier = {
-		defender_holding_advantage = normal_building_advantage_tier_2
-		fort_level = good_building_fort_level_tier_2
-		monthly_income = 2
-		stationed_maa_damage_mult = normal_maa_damage_tier_2
-		stationed_maa_toughness_mult = normal_maa_toughness_tier_2
-		stationed_maa_screen_mult = normal_maa_screen_tier_2
-		stationed_maa_pursuit_mult = normal_maa_pursuit_tier_2
-	}
-	
-	county_modifier = {
-		levy_size = 0.2
-		tax_mult = 0.2
-		development_growth_factor = 0.2
-		garrison_size = 0.2
-	}
-	
-	duchy_capital_county_modifier = {
-		tax_mult = 0.05
-		development_growth_factor = 0.05
-	}
-	
-	next_building = estalian_great_city_03
-	
-	type = duchy_capital
-	
-	ai_value = {
-		base = 100
-		culture_likely_to_fortify_modifier = yes
-		modifier = { # Fill all building slots before going for special buildings
-			factor = 0
-			free_building_slots > 0
-		}
-	}
-}
-
-estalian_great_city_03 = {
-	construction_time = slow_construction_time
-
-	can_construct_potential = {
-		building_requirement_castle_city_church = { LEVEL = 01 }
-		building_requirement_tribal = no
-		OR = {
-			barony = title:b_bilbali
-			barony = title:b_magritta
-		}
-	}
-	
-	can_construct_showing_failures_only = {
-		
-		culture = {
-			has_innovation = innovation_royal_armory
-		}
-	}
-	
-	is_enabled = {
-		county.holder = { has_title = prev.duchy }
-	}
-	show_disabled = yes
-	
-	cost_gold = expensive_building_tier_5_cost
-	
-	max_garrison = good_building_max_garrison_tier_3
-	
-	province_modifier = {
-		defender_holding_advantage = normal_building_advantage_tier_3
-		fort_level = good_building_fort_level_tier_3
-		monthly_income = 3
-		stationed_maa_damage_mult = normal_maa_damage_tier_3
-		stationed_maa_toughness_mult = normal_maa_toughness_tier_3
-		stationed_maa_screen_mult = normal_maa_screen_tier_3
-		stationed_maa_pursuit_mult = normal_maa_pursuit_tier_3
-	}
-	
-	county_modifier = {
-		levy_size = 0.3
-		tax_mult = 0.3
-		development_growth_factor = 0.3
-		garrison_size = 0.3
-	}
-	
-	duchy_capital_county_modifier = {
-		tax_mult = 0.10
-		development_growth_factor = 0.10
-	}
-	
-	type = duchy_capital
-	
-	flag = fully_upgraded_duchy_capital_building
-	
-	ai_value = {
-		base = 100
-		culture_likely_to_fortify_modifier = yes
-		modifier = { # Fill all building slots before going for special buildings
-			factor = 0
-			free_building_slots > 0
-		}
-	}
-}
-
-valley_of_windmills_01 = {
-	
-	construction_time = slow_construction_time
-	
-	type_icon = "icon_building_windmills.dds" 
-	
-	can_construct_potential = {
-		scope:holder.culture = {
-			has_innovation = innovation_windmills
-		}
-	}
-	
-	cost_gold = 200
-	
-	county_modifier = {
-		build_gold_cost = -0.15
+		development_growth = 0.1
+		hostile_raid_time = 0.2
 	}
 
-	ai_value = {
-		base = 100
-		modifier = { # Fill all building slots before going for special buildings
-			factor = 0
-			free_building_slots > 0
-		}
-	}
+	type_icon = "icon_structure_falak_ol_aflak_citadel.dds"
 	
 	type = special
+	
+	flag = travel_point_of_interest_martial
 
-	flag = travel_point_of_interest_economic
+	ai_value = {
+		base = 100
+		culture_likely_to_fortify_modifier = yes
+		modifier = { # Fill all building slots before going for special buildings
+			factor = 0
+			free_building_slots > 0
+		}
+	}
 }
 
-#Tilean
- 
+monte_castello_01 = {
+	construction_time = slow_construction_time
+
+	can_construct_potential = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		building_requirement_tribal = no
+	}
+	
+	can_construct_showing_failures_only = {
+		
+		culture = {
+			has_innovation = innovation_burhs
+		}
+	}
+	
+	is_enabled = {
+		county.holder = { has_title = prev.duchy }
+	}
+	show_disabled = yes
+	
+	cost_gold = expensive_building_tier_3_cost
+	
+	max_garrison = 500
+	
+	province_modifier = {
+		defender_holding_advantage = 10
+		fort_level = 4
+	}
+
+	type_icon = "icon_structure_falak_ol_aflak_citadel.dds"
+	
+	type = special
+	
+	flag = travel_point_of_interest_martial
+
+	ai_value = {
+		base = 100
+		culture_likely_to_fortify_modifier = yes
+		modifier = { # Fill all building slots before going for special buildings
+			factor = 0
+			free_building_slots > 0
+		}
+	}
+}
+
 # city_remas_01 = {
 	
 	# construction_time = very_slow_construction_time
@@ -3050,26 +3257,15 @@ miragliano_foundries_01 = {
 	
 	type_icon = "icon_building_blacksmiths.dds" 
 	
-	effect_desc = {
-		desc = unlocks_building_desc
-		triggered_desc = {
-			trigger = { has_dlc_feature = tours_and_tournaments }
-			desc = blacksmiths_toto_effect_desc
-		}
-		triggered_desc = {
-			trigger = { has_dlc_feature = royal_court }
-			desc = blacksmiths_roco_effect_desc
-		}
-		desc = blacksmiths_effect_desc
-	}
-	
 	can_construct_potential = {
 	}
 	
 	cost_gold = 500
 	
 	character_modifier = {
-		prowess = 2
+		negate_prowess_penalty_add = 5
+		men_at_arms_recruitment_cost = -0.1
+		knight_effectiveness_mult = 0.20
 	}
 	
 	county_modifier = {
@@ -3078,8 +3274,7 @@ miragliano_foundries_01 = {
 	
 	province_modifier = { 
 		monthly_income = 1
-		stationed_maa_damage_mult = normal_maa_damage_tier_1
-		stationed_maa_toughness_mult = high_maa_toughness_tier_3
+		stationed_maa_toughness_mult = very_high_maa_toughness_tier_2
 	}
 	
 	ai_value = {
@@ -3856,7 +4051,7 @@ miragliano_foundries_01 = {
 #		scope:holder.culture = {
 #			has_cultural_pillar = heritage_arabyan
 #		}
-	}
+	#}
 	
 	# is_enabled = { No heritage lizardman yet
 	# 	NOT = { 

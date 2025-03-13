@@ -6,7 +6,6 @@
 	religion = myrmidian_eastern
 	holding = castle_holding
 	6000.1.1 = { 
-		special_building_slot = generic_university
 		duchy_capital_building = tilean_great_city_01
 		buildings = {
 			castle_02

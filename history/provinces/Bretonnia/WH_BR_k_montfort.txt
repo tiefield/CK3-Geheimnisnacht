@@ -7,7 +7,7 @@
 	religion = grail
 	holding = castle_holding
 	6000.1.1 = { 
-		duchy_capital_building = castle_montfort_01
+		special_building = castle_montfort_01
 		buildings = {
 			castle_02
 			smiths_02

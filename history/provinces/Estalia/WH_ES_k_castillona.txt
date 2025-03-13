@@ -224,6 +224,9 @@
 	culture = norteno
 	religion = myrmidian_western
 	holding = castle_holding
+	6000.1.1 = {
+		special_building = tor_karyndis_01
+	}
 }
 1664 = { #trebido
 	holding = church_holding

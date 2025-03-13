@@ -6,7 +6,7 @@
 	religion = myrmidian_western
 	holding = castle_holding
 	6000.1.1 = { 
-		duchy_capital_building = city_bilbali_01
+		special_building = city_bilbali_01
 		buildings = {
 			curtain_walls_02
 			common_tradeport_02
