@@ -2,7 +2,9 @@
 
 grail_quest_decision = { #grail quest lite version (later for AI only)
 	title = grail_quest_decision
-	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds" 
+	picture = {
+		reference ="gfx/interface/illustrations/decisions/decision_personal_religious.dds" 
+	}
 	desc = grail_quest_decision_desc
 	selection_tooltip = grail_quest_decision_tooltip
 	cooldown = { years = 5 }
@@ -65,8 +67,9 @@ grail_quest_decision = { #grail quest lite version (later for AI only)
 
 grail_virtues_knighthood_decision = {
 	ai_check_interval = 12
-	picture = "gfx/interface/illustrations/decisions/decision_knight_kneeling.dds"
-	
+	picture = {
+		reference ="gfx/interface/illustrations/decisions/decision_knight_kneeling.dds"
+	}
 	sort_order = -20
 	major = yes
 	
@@ -509,8 +512,9 @@ grail_virtues_knighthood_decision = {
 }
 
 repanse_dynasty_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_repanse.dds"
-
+	picture {
+		reference == "gfx/interface/illustrations/decisions/decision_repanse.dds"
+	}
 	desc = repanse_dynasty_decision_desc
 	selection_tooltip = repanse_dynasty_decision_tooltip
 	major = yes
@@ -543,7 +547,9 @@ repanse_dynasty_decision = {
 }
 
 king_louis_respect_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_louis.dds"
+	picture = {
+		reference ="gfx/interface/illustrations/decisions/decision_louis.dds"
+	}
 	major = yes
 	is_shown = {
 		this = character:dame_100
@@ -574,7 +580,9 @@ king_louis_respect_decision = {
 }
 
 lambert_good_boy_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_good_boy.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_good_boy.dds"
+	}
 	is_shown = {
 		this = character:savaric_101
 		is_ruler = yes
