@@ -7,7 +7,6 @@
 	religion = grail
 	holding = castle_holding
 	6000.1.1 = {
-		duchy_capital_building = bretonnian_ducal_castle_01
 		buildings = {
 			castle_02
 			outposts_01

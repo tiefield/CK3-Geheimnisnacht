@@ -28,9 +28,10 @@
 	province_modifier = {
 		fort_level = 2
 		defender_holding_advantage = 5
-		stationed_heavy_cavalry_damage_mult = high_maa_damage_tier_1
-		stationed_heavy_cavalry_toughness_mult = high_maa_toughness_tier_1
-		stationed_heavy_cavalry_pursuit_mult = high_maa_pursuit_tier_1
+		stationed_heavy_cavalry_damage_mult = very_high_maa_damage_tier_1
+		stationed_heavy_cavalry_toughness_mult = very_high_maa_toughness_tier_1
+		stationed_heavy_cavalry_pursuit_mult = very_high_maa_pursuit_tier_1
+		stationed_heavy_cavalry_screen_mult = very_high_maa_screen_tier_1
 	}
 	
 	county_modifier = {
@@ -86,9 +87,10 @@ bretonnian_ducal_castle_02 = {
 	province_modifier = {
 		fort_level = 5
 		defender_holding_advantage = 10
-		stationed_heavy_cavalry_damage_mult = high_maa_damage_tier_2
-		stationed_heavy_cavalry_toughness_mult = high_maa_toughness_tier_2
-		stationed_heavy_cavalry_pursuit_mult = high_maa_pursuit_tier_2
+		stationed_heavy_cavalry_damage_mult = very_high_maa_damage_tier_2
+		stationed_heavy_cavalry_toughness_mult = very_high_maa_toughness_tier_2
+		stationed_heavy_cavalry_pursuit_mult = very_high_maa_pursuit_tier_2
+		stationed_heavy_cavalry_screen_mult = very_high_maa_screen_tier_2
 	}
 	
 	county_modifier = {
@@ -142,9 +144,10 @@ bretonnian_ducal_castle_03 = {
 	province_modifier = {
 		fort_level = 8
 		defender_holding_advantage = 20
-		stationed_heavy_cavalry_damage_mult = high_maa_damage_tier_3
-		stationed_heavy_cavalry_toughness_mult = high_maa_toughness_tier_3
-		stationed_heavy_cavalry_pursuit_mult = high_maa_pursuit_tier_3
+		stationed_heavy_cavalry_damage_mult = very_high_maa_damage_tier_3
+		stationed_heavy_cavalry_toughness_mult = very_high_maa_toughness_tier_3
+		stationed_heavy_cavalry_pursuit_mult = very_high_maa_pursuit_tier_3
+		stationed_heavy_cavalry_screen_mult = very_high_maa_screen_tier_3
 	}
 	
 	county_modifier = {

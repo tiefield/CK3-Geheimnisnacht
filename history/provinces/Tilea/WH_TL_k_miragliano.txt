@@ -16,6 +16,9 @@
 }
 1839 = { #forza
 	holding = city_holding
+	6000.1.1 = {
+		special_building = generic_university
+	}
 }
 1840 = { #palude
 	holding = church_holding

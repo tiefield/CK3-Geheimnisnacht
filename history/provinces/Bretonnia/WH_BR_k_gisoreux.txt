@@ -9,7 +9,6 @@
 	holding = castle_holding
 	6000.1.1 = {
 		special_building = generic_university
-		duchy_capital_building = bretonnian_ducal_castle_01
 		buildings = {
 			castle_02
 			farm_estates_01

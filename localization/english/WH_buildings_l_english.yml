@@ -126,18 +126,18 @@ building_type_urbanmarket_01:2 "Marketplace"
  building_taalplace_home_04_desc:1 "The Greatest Temple dedicated to Taal and Rhya is not a building, but the Sacred Forest located inside the creater "Eye of the Forest". Some Taalite worshippers claim that the Sacred Forest is the only remnants of the once ancient forest that covered the entirety of the Empire in the days of Sigmar, but this claim is often rebuked. Forest itself is a wild place, where every tree is seen as a sacred objective, sometimes the forest grows beyond its reach, and will have to be cut down for the sake of the farmlands that are essential for feeding Talabheim. These trees are often used in the construction of temples dedicated to the God of the Wild, or holy weapons often used by the holy order the Longshanks."
 
  building_type_tower_of_tor_alessi_01:0 "Great Lighthouse"
- building_type_tower_of_tor_alessi_01_desc:0 "Most spectacular is the lighthouse, over three hundred feet tall and with walls so smooth that, at first glance, the lighthouse looks like a single piece of stone. The walls of the city extend from the lighthouse, rise sixty feet above the streets, and are broad enough for knights to ride ten abreast along the top."
+ building_type_tower_of_tor_alessi_01_desc:0 "Most spectacular is the lighthouse, over three hundred feet tall and with walls so smooth that, at first glance, the lighthouse looks like a single piece of stone."
  building_tower_of_tor_alessi_01:0 "Great Lighthouse"
- building_tower_of_tor_alessi_01_desc:0 "Most spectacular is the lighthouse, over three hundred feet tall and with walls so smooth that, at first glance, the lighthouse looks like a single piece of stone. The walls of the city extend from the lighthouse, rise sixty feet above the streets, and are broad enough for knights to ride ten abreast along the top."
+ building_tower_of_tor_alessi_01_desc:0 "Most spectacular is the lighthouse, over three hundred feet tall and with walls so smooth that, at first glance, the lighthouse looks like a single piece of stone."
 
  building_type_couronne_tournament_grounds_01:0 "Couronne Tournament Grounds"
  building_type_couronne_tournament_grounds_01_desc:0 "The city is proud of the Couronne Tournaments Grounds. The largest tournament centre in Bretonnia, the knights of the city have a good time showing off for the peasantry. Visitors from all across Bretonnia and beyond come to visit the tournaments here."
  building_couronne_tournament_grounds_01:0 "Couronne Tournament Grounds"
  building_couronne_tournament_grounds_01_desc:0 "The city is proud of the Couronne Tournaments Grounds. The largest tournament centre in Bretonnia, the knights of the city have a good time showing off for the peasantry. Visitors from all across Bretonnia and beyond come to visit the tournaments here."
 
- building_type_vineyards_of_bordeleaux_01:0 "Vineyard of Bordeleaux"
+ building_type_vineyards_of_bordeleaux_01:0 "Vineyard of Castle Bordeleaux"
  building_type_vineyards_of_bordeleaux_01_desc:0 "The countryside of Bordeleaux is lined with vineyards, and those planted on the banks of the River Morceaux are seen as the best of the best."
- building_vineyards_of_bordeleaux_01:0 "Vineyard of Bordeleaux"
+ building_vineyards_of_bordeleaux_01:0 "Vineyard of Castle Bordeleaux"
  building_vineyards_of_bordeleaux_01_desc:0 "The countryside of Bordeleaux is lined with vineyards, and those planted on the banks of the River Morceaux are seen as the best of the best."
  
  building_type_castle_montfort_01:0 "Castle Montfort"
@@ -210,6 +210,34 @@ building_type_urbanmarket_01:2 "Marketplace"
  building_city_remas_01:0 "Great City of Remas"
  building_city_remas_01_desc:0 "Remas, officially the Republic of Remas and sometimes called the "Rebellious Republic of Remas," is a large, prosperous and ancient city-state located on the coast of Tilea. Remas was once the heart of the ancient Reman Empire."
  
+ building_type_castilla_diablos_01:0 "Castle Diablos"
+ building_type_castilla_diablos_01_desc:0 "The cannon batteries ranged along the battlements of Castilla Diablos are armed to defend the city in times of need. The gunners of Sartosa’s hillside fortress are considered the best on the island."
+ building_castilla_diablos_01:0 "Castle Diablos"
+ building_castilla_diablos_01_desc:0 "The cannon batteries ranged along the battlements of Castilla Diablos are armed to defend the city in times of need. The gunners of Sartosa’s hillside fortress are considered the best on the island."
+
+ building_type_monte_castello_01:0 "Monte Castello"
+ building_type_monte_castello_01_desc:0 "The mighty and prosperous monastery fortress of Monte Castello is among the greatest fortresses in the Known World and is defended by troops supplied from all major cities of Tilea to protect their borders with the unruly Border Princes."
+ building_monte_castello_01:0 "Monte Castello"
+ building_monte_castello_01_desc:0 "The mighty and prosperous monastery fortress of Monte Castello is among the greatest fortresses in the Known World and is defended by troops supplied from all major cities of Tilea to protect their borders with the unruly Border Princes."
+
+ 
+ building_type_tor_karyndis_01:0 "Tor Karyndis"
+ building_type_tor_karyndis_01_desc:0 "Tor Karyndis, known to Estalians as the Shattered Tower, is an ancient High Elven ruin. Locals now whisper that this dragon sleeps beneath the shattered spires, awakening every few decades to ravage the surrounding lands"
+ building_tor_karyndis_01:0 "Tor Karyndis (Haunted)"
+ building_tor_karyndis_01_desc:0 "Tor Karyndis, known to Estalians as the Shattered Tower, is an ancient High Elven ruin. Locals now whisper that this dragon sleeps beneath the shattered spires, awakening every few decades to ravage the surrounding lands"
+ 
+ building_type_tor_karyndis_02:0 "Tor Karyndis"
+ building_type_tor_karyndis_02_desc:0 "Tor Karyndis, known to Estalians as the Shattered Tower, is an ancient High Elven ruin. Locals now celebrate the cleansing of the ruin"
+ building_tor_karyndis_02:0 "Tor Karyndis (Pacified)"
+ building_tor_karyndis_02_desc:0 "Tor Karyndis, known to Estalians as the Shattered Tower, is an ancient High Elven ruin. Locals now celebrate the cleansing of the ruin"
+ 
+ building_type_chapel_of_bastonne_01:0 "The Chapel of Bastonne"
+ building_type_chapel_of_bastonne_01_desc:0 "Also known as the Cathedral of Bastonne, the Chapel of Bastonne famously holds the very codes of chivalry created by Louis the Rash, son of Gilles and second King of Bretonnia."
+ building_chapel_of_bastonne_01:0 "The Chapel of Bastonne"
+ building_chapel_of_bastonne_01_desc:0 "Also known as the Cathedral of Bastonne, the Chapel of Bastonne famously holds the very codes of chivalry created by Louis the Rash, son of Gilles and second King of Bretonnia."
+
+
+
 
  building_type_estalian_great_city_01:0 "Great Estalian City"
  building_type_estalian_great_city_01_desc:0 "Placeholder"
@@ -281,8 +309,11 @@ building_type_urbanmarket_01:2 "Marketplace"
  building_valley_of_windmills_01:0 "Valley of Windmills"
  building_valley_of_windmills_01_desc:0 "The Valley of Windmills is located high in the Abasko Mountains. Constructed long ago by the mad King Don Jurno Esparo in an attempt to feed his people, the valley was soon abandoned because of its location, and the hundreds of windmills in it left to rot." 
  
+building_type_archecclesiatium_of_myrmidia_01: "Archecclesiatium of Myrmidia"
+building_type_archecclesiatium_of_myrmidia_01_desc: "Placeholder"
 building_archecclesiatium_of_myrmidia_01: "Archecclesiatium of Myrmidia"
 building_archecclesiatium_of_myrmidia_01_desc: "Placeholder"
+building_type_great_temple_of_myrmidia_01: "Great Temple of Myrmidia"
+building_type_great_temple_of_myrmidia_01_desc: "Placeholder"
 building_great_temple_of_myrmidia_01: "Great Temple of Myrmidia"
 building_great_temple_of_myrmidia_01_desc: "Placeholder"
-
