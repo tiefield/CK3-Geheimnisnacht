@@ -102,14 +102,6 @@ cat_warwickshire_bear1.dds = { colors = 3 category = animals  }
 cat_warhammer2.dds = { colors = 2 category = manmade  }
 cat_warhammer1.dds = { colors = 2 category = manmade  }
 cat_warhammer_chaos5.dds = { colors = 1 category = faiths   }
-cat_warhammer_chaos4.dds = { colors = 2 category = faiths   }
-cat_warhammer_chaos3.dds = { colors = 2 category = faiths   }
-cat_warhammer_chaos2.dds = { colors = 3 category = faiths   }
-cat_warhammer_chaos_tzeentch.dds = { colors = 1 category = faiths   }
-cat_warhammer_chaos_slaanesh.dds = { colors = 1 category = faiths   }
-cat_warhammer_chaos_nurgle.dds = { colors = 2 category = faiths   }
-cat_warhammer_chaos_khorne.dds = { colors = 1 category = faiths   }
-cat_warhammer_chaos.dds = { colors = 1 category = faiths   }
 cat_warhammer_40k_aquila.dds = { colors = 1 category = animals   }
 cat_wales_feathers02.dds = { colors = 3 category = animals  }
 cat_wales_feather.dds = { colors = 2 category = animals  }
