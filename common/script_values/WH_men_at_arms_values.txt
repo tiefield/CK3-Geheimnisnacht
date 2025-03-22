@@ -233,16 +233,16 @@ colonial_horsemen_low_maint_cost = @[maa_low_maintenance_cost]
 colonial_horsemen_high_maint_cost = @[maa_high_maintenance_cost]
 
 ############################
-#Brettonia
+#Bretonnia
 ############################
 
 un_horsed_knights_recruitment_cost = @[maa_buy_cost]
 un_horsed_knights_low_maint_cost = @[maa_low_maintenance_cost]
 un_horsed_knights_high_maint_cost = @[maa_high_maintenance_cost]
 
-questing_knights_recruitment_cost = @[maa_buy_cost]
-questing_knights_low_maint_cost = @[maa_low_maintenance_cost]
-questing_knights_high_maint_cost = @[maa_high_maintenance_cost]
+bret_questing_recruitment_cost = @[maa_buy_cost]
+bret_questing_low_maint_cost = @[maa_low_maintenance_cost]
+bret_questing_high_maint_cost = @[maa_high_maintenance_cost]
 
 ############################
 #Chaos

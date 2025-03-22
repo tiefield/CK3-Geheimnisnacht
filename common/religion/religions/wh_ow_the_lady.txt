@@ -63,7 +63,7 @@
 		{ name = "" }
 	}
 
-	holy_order_maa = { the_lady_knights }
+	holy_order_maa = { bret_questing }
 	holy_order_maa = { battle_pilgrims }
 
 	localization = {
