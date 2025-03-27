@@ -1456,9 +1456,6 @@ bearn_100 = {
 	6485.7.11 = {
 		birth = yes
 	}
-	6508.2.4 = {
-		add_spouse = coste_100
-	}
 }
 
 bearn_101 = {
@@ -1471,9 +1468,6 @@ bearn_101 = {
 	religion = grail
 	6487.5.22 = {
 		birth = yes
-	}
-	6509.1.8 = {
-		add_spouse = dros_100
 	}
 }
 
@@ -2659,6 +2653,17 @@ gwynael_001 = {
 	}
 	6504.2.6 = {
 		death = yes
+	}
+}
+
+gwynael_107 = {
+	name = Olivier
+	dynasty_house = house_gwynael
+	culture = gisoren
+	religion = grail
+	father = gwynael_100
+	6505.2.5 = {
+		birth = yes
 	}
 }
 
@@ -4104,9 +4109,6 @@ bessa_100 = {
 	trait = knight_lady_realm
 	6489.7.22 = {
 		birth = yes
-	}
-	6508.9.6 = {
-		add_spouse = got_106
 	}
 }
 
