@@ -8,9 +8,9 @@ k_wissenland = {
 	5938.10.21 = {
 		holder = 89025	
 	}
-	6510.1.1 = {
-		liege = e_reikland
-	}
+	#6510.1.1 = {
+	#	liege = e_reikland
+	#}
 	6510.1.1 = {
 		holder = 89000
 	}

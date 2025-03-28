@@ -14,9 +14,9 @@ k_stirland = { #Stirland is poor than other provinces, instead of 8 being the av
 	6294.8.13 = {
 		holder = 79027	
 	}
-	6510.1.1 = {
-		liege = e_westerland
-	}
+	#6510.1.1 = {
+	#	liege = e_westerland
+	#}
 	6510.1.1 = {
 		holder = 79000
 	}

@@ -7,9 +7,9 @@ k_ostermark = {
 	5769.2.12 = {
 		holder = 85021
 	}
-	5859.6.23 = {
-		liege = e_talabecland
-	}
+	#5859.6.23 = {
+	#	liege = e_talabecland
+	#}
 	6330.2.15 = {
 		holder = 85022
 	}
@@ -43,9 +43,9 @@ k_ostermark = {
 	6497.5.10 = {
 		holder = 85000
 	}
-	6500.1.1 = {
-		liege = e_talabecland
-	}
+	#6500.1.1 = {
+	#	liege = e_talabecland
+	#}
 	6804.12.5 = {
 		liege = e_the_empire
 	}

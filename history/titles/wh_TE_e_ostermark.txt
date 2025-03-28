@@ -1,0 +1,8 @@
+﻿e_ostermark = {
+	6480.2.6 = {
+		holder = 85000
+		#law = succ_primogeniture
+		#law = cognatic_succession
+		#law = centralization_2
+	}
+}

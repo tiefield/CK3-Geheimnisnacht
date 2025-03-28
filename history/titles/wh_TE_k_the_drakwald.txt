@@ -12,12 +12,6 @@ d_northern_drakwald = {
 	}
 }
 
-c_khornewald = {
-	6510.1.1 = {
-		holder = 60193
-	}
-}
-
 c_laurelwald = {
 	6510.1.1 = {
 		holder = 60196

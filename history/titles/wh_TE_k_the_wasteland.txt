@@ -13,6 +13,15 @@ d_tumble_downs = {
 }
 
 c_rotterrade = {
+	6510.1.1 = {
+		liege = k_westerland
+	}
+	6510.1.1 = {
+		holder = 51018
+	}
+	6976.5.10 = {
+		holder = 51155
+	}
 }
 
 c_ankeeven = {

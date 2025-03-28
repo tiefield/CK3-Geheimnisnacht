@@ -261,10 +261,11 @@ c_vandengart = {
 c_bohsenfels = {
 	6000.1.1 = { change_development_level = 6 }
 	6510.1.1 = {
-		liege = d_ferlangen
+		liege = k_ostland
 		holder = 86031
 	}
 	7013.5.2 = {
+		liege = k_ostland
 		holder = 86088
 	}
 }
@@ -275,6 +276,7 @@ c_gauschdorf = {
 		liege = d_kislev_verge
 	}
 	6510.1.1 = {
+		liege = k_ostland
 		holder = 86032
 	}
 	6950.1.1 = {
@@ -339,6 +341,7 @@ c_rossin = {
 
 d_ferlangen = {
 	6510.1.1 = {
+		liege = k_ostland
 		holder = 86008
 	}
 	6804.12.5 = {

@@ -1,9 +1,9 @@
 ##d_northern_drakwald ###################################
 ###c_khornewald
 893 = {	# Freudendrungen
-	culture = beastman_main
-	religion = beastman
-	holding = tribal_holding
+	culture = nordlander
+	religion = manannite
+	holding = none
 }
 
 894 = {	# Grossenlein

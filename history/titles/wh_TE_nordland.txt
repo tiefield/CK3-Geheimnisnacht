@@ -38,7 +38,7 @@ k_nordland = {
 	}
 	6500.10.5 = {
 		holder = 52000
-		liege = e_westerland
+		#liege = e_westerland
 	}
 	6804.12.5 = {
 		liege = e_the_empire
@@ -355,6 +355,14 @@ d_laurelorn = {
 
 c_roterwald = {
 	6000.1.1 = { change_development_level = 9 }
+}
+
+c_khornewald = {
+	6000.1.1 = { 
+		change_development_level = 6 
+		liege = k_nordland
+		holder = 52000
+	}
 }
 
 c_spuktichtung = {

@@ -319,7 +319,45 @@
 	holding = none
 }
 
+# 625 = {	# Westerdrop
+# 	holding = none
+# }
 
+# 626 = {	# Rotterrade
+# 	holding = none
+# }
+
+# 627 = {	# Hilverhof
+# 	holding = none
+# }
+
+# 628 = {	# Bredevoort
+# 	holding = none
+# }
+
+# 629 = {	# Hoogedaal
+# 	holding = none
+# }
+
+# 630 = {	# Leeuwningen
+# 	holding = none
+# }
+
+# 631 = {	# Amsterhuizen
+# 	holding = none
+# }
+
+# 632 = {	# Ankeeve
+# 	holding = none
+# }
+
+# 633 = {	# Halfweg
+# 	holding = none
+# }
+
+# 634 = {	# Genevorden
+# 	holding = none
+# }
 
 ##d_gap_of_berbres ###################################
 ###c_gap_of_berbres
