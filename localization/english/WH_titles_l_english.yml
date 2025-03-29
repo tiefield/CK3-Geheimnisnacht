@@ -2499,6 +2499,8 @@
  k_wissenland_adj:0 "Wissenlandian"
  k_zhufbarak:0 "Zhufbarak"
  k_zhufbarak_adj:0 "Zhufbarakian"
+ k_solland:0 "Solland"
+ k_solland_adj:0 "Sollander"
  
  b_bastonne:0 "Bastonne"
  b_baux:0 "Baux"
