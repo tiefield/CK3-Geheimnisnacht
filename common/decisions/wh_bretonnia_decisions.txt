@@ -7,8 +7,7 @@ grail_virtues_knighthood_decision = {
 		reference = "gfx/interface/illustrations/decisions/decision_knight_kneeling.dds"
 	}
 	
-	sort_order = -20
-	major = yes
+	decision_group_type = major
 	
 	cooldown = { years = 30 }
 
@@ -455,7 +454,7 @@ repanse_dynasty_decision = {
 
 	desc = repanse_dynasty_decision_desc
 	selection_tooltip = repanse_dynasty_decision_tooltip
-	major = yes
+	decision_group_type = major
 	ai_check_interval = 60
 
 	is_shown = {
@@ -488,7 +487,7 @@ king_louis_respect_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_louis.dds"
 	} 
-	major = yes
+	decision_group_type = major
 	is_shown = {
 		this = character:dame_100
 		age < 30
@@ -520,12 +519,13 @@ king_louis_respect_decision = {
 lambert_good_boy_decision = {
 	picture = {
 		reference = "gfx/interface/illustrations/decisions/decision_good_boy.dds"
-	}"gfx/interface/illustrations/decisions/decision_good_boy.dds"
+	}
 	is_shown = {
 		this = character:savaric_101
 		is_ruler = yes
 	}
-	major = yes
+
+	decision_group_type = major
 	
 	desc = lambert_good_boy_decision_desc
 	ai_will_do = {
